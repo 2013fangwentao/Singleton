@@ -5,7 +5,7 @@
 ** Login   <wtfang@whu.edu.cn>
 **
 ** Started on  undefined Jan 13 下午7:52:33 2019 little fang
-** Last update Mon Jan 13 下午11:26:30 2019 little fang
+** Last update Mon Jan 13 下午11:36:06 2019 little fang
 */
 
 #include <fstream>
@@ -17,6 +17,12 @@ using namespace std;
 
 ConfigInfo::Ptr ConfigInfo::config_info(new ConfigInfo());
 
+/**
+ * @brief  初始化函数
+ * @note   
+ * @param  *config_file_path: 配置文件路径
+ * @retval None
+ */
 void ConfigInfo::Open(const char *config_file_path)
 {
     ifstream ifs_in(config_file_path, ios::in);
@@ -45,6 +51,11 @@ void ConfigInfo::Open(const char *config_file_path)
     }
 }
 
+/**
+ * @brief  获取单例模式下的唯一对象
+ * @note   
+ * @retval 
+ */
 ConfigInfo::Ptr ConfigInfo::GetInstance()
 {
     return config_info;
