@@ -1,0 +1,6 @@
+num      10
+start    25
+path     /home/fwt/interface
+angle    2.8
+#ceshi 
+mass     3.67
