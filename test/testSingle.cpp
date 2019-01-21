@@ -13,12 +13,12 @@
 int main(int argc, char *argv[])
 {
     ConfigInfo::Ptr getconfig = ConfigInfo::GetInstance();
-    getconfig->Open("./config.txt");
+    getconfig->open("../config.txt");
 
-    std::cout<<getconfig->Get<int>("num")<<std::endl;
-    std::cout<<getconfig->Get<double>("start")<<std::endl;
-    std::cout<<getconfig->Get<std::string>("path")<<std::endl;
-    std::cout<<getconfig->Get<double>("Angle")<<std::endl;
-    std::cout<<getconfig->Get<double>("haha")<<std::endl;
+	std::cout << getconfig->get<int>("num") << std::endl;
+	std::cout << getconfig->get<double>("start") << std::endl;
+	std::cout << getconfig->get<std::string>("path") << std::endl;
+	std::cout << getconfig->get<double>("Angle") << std::endl;
+	std::cout << getconfig->get<double>("haha") << std::endl;
     return 0;
 }

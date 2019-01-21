@@ -5,14 +5,15 @@
 ** Login   <wtfang@whu.edu.cn>
 **
 ** Started on  undefined Jan 13 下午7:52:33 2019 little fang
-** Last update Mon Jan 13 下午11:36:06 2019 little fang
+** Last update Tue Jan 21 10:36:58 PM 2019 little fang
 */
 
+#include "Single.h"
 #include <fstream>
 #include <string>
 #include <sstream>
 #include <algorithm>
-#include "Single.h"
+
 using namespace std;
 
 ConfigInfo::Ptr ConfigInfo::config_info(new ConfigInfo());
@@ -23,13 +24,13 @@ ConfigInfo::Ptr ConfigInfo::config_info(new ConfigInfo());
  * @param  *config_file_path: 配置文件路径
  * @retval None
  */
-void ConfigInfo::Open(const char *config_file_path)
+bool ConfigInfo::open(const char *config_file_path)
 {
     ifstream ifs_in(config_file_path, ios::in);
     if (!ifs_in)
     {
         cout << "Config File Lost" << endl;
-        exit(0);
+		return false;
     }
     while (!ifs_in.eof())
     {
@@ -49,6 +50,7 @@ void ConfigInfo::Open(const char *config_file_path)
         sstr_line >> value;
         storage[key] = value;
     }
+	return true;
 }
 
 /**
